@@ -40,13 +40,17 @@ curl -s http://127.0.0.1:3000/health
 # {"status":"ok"}
 ```
 
-That proves the process is up and routing. The proxy is a second, separate check — it fails when the upstream is
-unreachable, and it should:
+That proves the process is up and routing, and it holds even when nothing else does. The proxy has two failure
+states, both checkable without any network:
 
 ```bash
-curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:3000/
-# 200 with a working API_URL, 502 when the upstream is down
+curl -s -w " %{http_code}\n" http://127.0.0.1:3000/
+# {"error":"API_URL is not set"} 500        — API_URL left empty
+# {"error":"upstream request failed"} 502   — API_URL set, upstream unreachable
 ```
+
+Set `API_URL` to a JSON endpoint you trust and the same request answers `200` with that endpoint's body.
+An endpoint that redirects is followed; one that answers HTML fails the JSON parse and lands on the `502`.
 
 ## Docker
 
@@ -55,7 +59,8 @@ docker build -t trial-koajs .
 docker run --rm -p 3000:3000 trial-koajs
 ```
 
-The image copies `.env.example` in as `.env` so it starts with no arguments. For a real endpoint, pass your own:
+The image copies `.env.example` in as `.env`, so it starts with no arguments: `/health` answers at once, and the
+proxy answers `500` until you give it an endpoint. To do that, mount your own file:
 `docker run --rm -p 3000:3000 --env-file .env trial-koajs`.
 
 Also published on Docker Hub as [liuyajie728/trial-koajs](https://hub.docker.com/r/liuyajie728/trial-koajs).

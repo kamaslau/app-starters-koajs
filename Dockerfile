@@ -36,7 +36,7 @@ LABEL maintainer="Kamas Lau<kamaslau@dingtalk.com>"
 WORKDIR /root/app
 
 COPY src ./src/
-COPY .env_template ./.env
+COPY .env.example ./.env
 COPY package.json ./
 COPY pnpm-lock.yaml ./
 

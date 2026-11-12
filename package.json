@@ -1,9 +1,9 @@
 {
   "name": "trial-koajs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node.js scaffold with Koa: routes, config and a health endpoint.",
   "engines": {
-    "node": "^18 || >=18"
+    "node": "^26 || >=24"
   },
   "repository": {
     "type": "git",
@@ -16,11 +16,15 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "Kamas Lau<kamaslau@dingtalk.com>",
+  "keywords": [
+    "koa",
+    "scaffold",
+    "nodejs"
+  ],
+  "author": "Lau, Kamas <kamaslau@dingtalk.com> (https://www.kamaslau.com/)",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.0.3",

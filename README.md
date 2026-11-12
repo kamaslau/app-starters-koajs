@@ -31,7 +31,8 @@ pnpm start
 | `PORT` | `3000` | Port the process listens on |
 | `API_URL` | — | JSON endpoint the single route proxies; without it the route answers `500` |
 
-`dotenv` reads `.env` from the working directory. Nothing else comes from the environment.
+The start script passes `--env-file-if-exists=.env` to Node, so `.env` is read by the runtime instead of by
+`dotenv` — the file may be missing without stopping the process. Nothing else comes from the environment.
 
 ## Verify
 

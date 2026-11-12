@@ -65,7 +65,7 @@ different questions, and a restart loop on the first one hides the second.
 Set `API_URL` to a JSON endpoint you trust and the same request answers `200` with that endpoint's body. A status
 the upstream returns itself is passed on unchanged, so a `404` stays a `404` instead of becoming a `200` with an
 error inside it. An endpoint that redirects is followed; one that answers HTML fails the JSON parse and lands on
-the `502`. Message language follows `LANG` / `LC_ALL` — `en`, `zh`, `ja`, anything else falls back to English, and
+the `502`. Message language follows `LANG` / `LC_ALL`, matched against `listLanguages()` from the installed http-response-text (`en`, `zh`, `ja`, `fr` today), and
 the bodies above are the English default.
 
 ## Docker

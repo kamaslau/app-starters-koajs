@@ -1,5 +1,5 @@
 {
-  "name": "trial-koajs",
+  "name": "app-starters-koajs",
   "version": "1.0.0",
   "description": "Node.js scaffold with Koa: routes, config and a health endpoint.",
   "engines": {
@@ -7,12 +7,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kamaslau/trial-koajs.git"
+    "url": "git+https://github.com/kamaslau/app-starters-koajs.git"
   },
   "bugs": {
-    "url": "https://github.com/kamaslau/trial-koajs/issues"
+    "url": "https://github.com/kamaslau/app-starters-koajs/issues"
   },
-  "homepage": "https://github.com/kamaslau/trial-koajs#readme",
+  "homepage": "https://github.com/kamaslau/app-starters-koajs#readme",
   "type": "module",
   "main": "src/index.js",
   "scripts": {

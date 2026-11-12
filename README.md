@@ -1,8 +1,8 @@
-# trial-koajs
+# app-starters-koajs
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-![GitHub top language](https://img.shields.io/github/languages/top/kamaslau/trial-koajs)
-![Repository size](https://img.shields.io/github/repo-size/kamaslau/trial-koajs?color=56BEB8)
+![GitHub top language](https://img.shields.io/github/languages/top/kamaslau/app-starters-koajs)
+![Repository size](https://img.shields.io/github/repo-size/kamaslau/app-starters-koajs?color=56BEB8)
 
 Node.js scaffold with [Koa](https://koajs.com/): one HTTP service, configuration from `.env`, and a `/health` endpoint.
 The single route proxies a JSON API — enough to show where the logger, the timing header and the error path sit
@@ -55,7 +55,7 @@ An endpoint that redirects is followed; one that answers HTML fails the JSON par
 ## Docker
 
 ```bash
-docker build -t trial-koajs .
+docker build -t app-starters-koajs .
 docker run --rm -p 3000:3000 trial-koajs
 ```
 
@@ -63,7 +63,13 @@ The image copies `.env.example` in as `.env`, so it starts with no arguments: `/
 proxy answers `500` until you give it an endpoint. To do that, mount your own file:
 `docker run --rm -p 3000:3000 --env-file .env trial-koajs`.
 
-Also published on Docker Hub as [liuyajie728/trial-koajs](https://hub.docker.com/r/liuyajie728/trial-koajs).
+Also published on Docker Hub as [liuyajie728/trial-koajs](https://hub.docker.com/r/liuyajie728/trial-koajs) — the image name predates the repository rename and stays as it is, since a Docker Hub repository cannot be renamed in place.
+
+## Use this template
+
+*Use this template* gives you a repository you own, with no history and no link back here — the right shape for
+the first commit of a real app. Clone it instead when you want to follow changes to the starter itself;
+a repository created from the template never receives them.
 
 ## License
 

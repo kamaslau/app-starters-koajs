@@ -56,12 +56,12 @@ An endpoint that redirects is followed; one that answers HTML fails the JSON par
 
 ```bash
 docker build -t app-starters-koajs .
-docker run --rm -p 3000:3000 trial-koajs
+docker run --rm -p 3000:3000 app-starters-koajs
 ```
 
 The image copies `.env.example` in as `.env`, so it starts with no arguments: `/health` answers at once, and the
 proxy answers `500` until you give it an endpoint. To do that, mount your own file:
-`docker run --rm -p 3000:3000 --env-file .env trial-koajs`.
+`docker run --rm -p 3000:3000 --env-file .env app-starters-koajs`.
 
 Also published on Docker Hub as [liuyajie728/trial-koajs](https://hub.docker.com/r/liuyajie728/trial-koajs) — the image name predates the repository rename and stays as it is, since a Docker Hub repository cannot be renamed in place.
 

@@ -1,6 +1,5 @@
 import Koa from 'koa'
 import { getStatus } from 'http-response-text'
-import 'dotenv/config'
 
 const port = Number(process.env.PORT ?? 3000)
 const timeout = 5_000

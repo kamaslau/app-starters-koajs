@@ -14,9 +14,9 @@
   },
   "homepage": "https://github.com/kamaslau/app-starters-koajs#readme",
   "type": "module",
-  "main": "src/index.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node .",
+    "start": "node --env-file-if-exists=.env .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -28,8 +28,7 @@
   "author": "Lau, Kamas <kamaslau@dingtalk.com> (https://www.kamaslau.com/)",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.0.3",
     "http-response-text": "^0.10.0",
-    "koa": "^2.14.1"
+    "koa": "^3.3.0"
   }
 }

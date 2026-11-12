@@ -1,7 +1,7 @@
 {
   "name": "app-starters-koajs",
   "version": "1.0.0",
-  "description": "Node.js scaffold with Koa: routes, config and a health endpoint.",
+  "description": "Node.js app starter with Koa: routes, config and a health endpoint.",
   "engines": {
     "node": "^26 || >=24"
   },
@@ -21,8 +21,9 @@
   },
   "keywords": [
     "koa",
-    "scaffold",
-    "nodejs"
+    "app-starter",
+    "nodejs",
+    "template"
   ],
   "author": "Lau, Kamas <kamaslau@dingtalk.com> (https://www.kamaslau.com/)",
   "license": "MIT",

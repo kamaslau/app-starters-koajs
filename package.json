@@ -28,7 +28,7 @@
   "author": "Lau, Kamas <kamaslau@dingtalk.com> (https://www.kamaslau.com/)",
   "license": "MIT",
   "dependencies": {
-    "http-response-text": "^0.10.0",
+    "http-response-text": "^0.11.0",
     "koa": "^3.3.0"
   }
 }

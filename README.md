@@ -81,6 +81,18 @@ proxy answers `500` until you give it an endpoint. To do that, mount your own fi
 
 Also published on Docker Hub as [liuyajie728/trial-koajs](https://hub.docker.com/r/liuyajie728/trial-koajs) — the image name predates the repository rename and stays as it is, since a Docker Hub repository cannot be renamed in place.
 
+## Why this shape
+
+One route, proxying one JSON endpoint. A starter that ships a database, an auth flow and a job queue is a starter nobody reads before building on top of it, and every one of those additions is a decision the project should make with its own context. What is here is the part every service needs on day one: a logger, a timing header, `/health`, and a place where errors become status codes.
+
+The proxy is a real HTTP call rather than a mock, because the interesting failures are the network ones — refused, timed out, answered with the wrong content type — and a starter that hides them teaches nothing about where they surface. The status mapping in `src/app.js` is the reference: `500` for a missing variable, `502` for an upstream that never answered, `504` for one that answered too late.
+
+`/health` answers without touching the upstream, deliberately. A health check that fails when a dependency fails turns a UI problem into a restart loop; the container stays up, and the proxy is the thing that reports the dependency.
+
+Configuration comes from `node --env-file-if-exists`, not `dotenv`. The runtime has read env files since Node 20.12, the file may be absent without stopping the process, and there is one less dependency to audit.
+
+The entry point is `src/app.js`, and the package's `main` points at it: `node .` resolves through the manifest, so the command in the README and the `CMD` in the `Dockerfile` cannot drift apart.
+
 ## Use this template
 
 *Use this template* gives you a repository you own, with no history and no link back here — the right shape for

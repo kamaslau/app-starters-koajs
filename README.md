@@ -102,3 +102,7 @@ a repository created from the template never receives them.
 ## License
 
 MIT — see [LICENSE](./LICENSE). Take what is useful.
+
+---
+
+Built by [Kamas Lau](https://www.kamaslau.com/works?utm_source=github&utm_medium=repo-readme&utm_campaign=always-on&utm_content=starter) — I do this for foreign companies operating in China, on their own infrastructure.
